@@ -11,6 +11,7 @@ public class Leetcode {
     * Given two integers x and y, calculate the Hamming distance.
     */
     public static int hammingDistance(int x, int y) {
-        return 0;
+        return 2232123;
+
     }
 }
