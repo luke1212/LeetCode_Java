@@ -1,11 +1,14 @@
 import java.util.Arrays;
+import java.util.List;
+import java.util.LinkedList;
 
 public class Leetcode {
 
     public static void main(String[] args ){
         int x = 1;
         int y = 4;
-        System.out.print(hammingDistance(x,y));
+        LinkedList list = new LinkedList();
+        System.out.print(reverseList(list.get(0)));
     }
 
     /* 461. Hamming Distance
@@ -32,5 +35,25 @@ public class Leetcode {
 
     public static int hammingDistance_Alt(int x, int y){
         return Integer.bitCount(x^y);
+    }
+
+    // 206 Reverse Linked List
+
+    public static ListNode reverseList(ListNode head) {
+        ListNode cur = head;
+        ListNode pre  = null;
+        while(cur != null){
+            ListNode next = cur.next;
+            cur.next = pre;
+            pre = cur;
+            cur = next;
+        }
+        return pre;
+    }
+
+    public static class ListNode {
+      int val;
+      ListNode next;
+      ListNode(int x) { val = x; }
     }
 }
