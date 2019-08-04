@@ -5,7 +5,7 @@ public class Leetcode {
     public static void main(String[] args ){
         int x = 1;
         int y = 4;
-        System.out.print(hammingDistance_Alt(x,y));
+        System.out.print(hammingDistance(x,y));
     }
 
     /* 461. Hamming Distance
