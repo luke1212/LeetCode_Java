@@ -1,14 +1,21 @@
 import java.util.Arrays;
-import java.util.List;
-import java.util.LinkedList;
 
 public class Leetcode {
 
     public static void main(String[] args ){
         int x = 1;
         int y = 4;
-        LinkedList list = new LinkedList();
-        System.out.print(reverseList(list.get(0)));
+        LinkedList list = new LinkedList(); 
+        list.head = new LinkedList.Node(1);
+        LinkedList.Node second = new LinkedList.Node(2);
+        LinkedList.Node thrid = new LinkedList.Node(3);
+        LinkedList.Node fourth = new LinkedList.Node(4);
+        LinkedList.Node fivth = new LinkedList.Node(5);
+        list.head.next = second;
+        second.next = thrid;
+        thrid.next = fourth;
+        fourth.next = fivth;
+        list.printList(reverseList(list.head));
     }
 
     /* 461. Hamming Distance
@@ -37,23 +44,17 @@ public class Leetcode {
         return Integer.bitCount(x^y);
     }
 
-    // 206 Reverse Linked List
+    // 206 Reverse Linked List https://www.geeksforgeeks.org/reverse-a-linked-list/
 
-    public static ListNode reverseList(ListNode head) {
-        ListNode cur = head;
-        ListNode pre  = null;
+    public static LinkedList.Node reverseList(LinkedList.Node head) {
+        LinkedList.Node cur = head;
+        LinkedList.Node pre  = null;
         while(cur != null){
-            ListNode next = cur.next;
+            LinkedList.Node next = cur.next;
             cur.next = pre;
             pre = cur;
             cur = next;
         }
         return pre;
-    }
-
-    public static class ListNode {
-      int val;
-      ListNode next;
-      ListNode(int x) { val = x; }
     }
 }
